@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pequenos Passos | Radar</title>
+
+  <link rel="stylesheet" href="/SRC/STATIC/CSS/base.css">
+  <link rel="stylesheet" href="/SRC/STATIC/CSS/navbar.css">
+  <link rel="stylesheet" href="/SRC/STATIC/CSS/layout.css">
+  <link rel="stylesheet" href="/SRC/STATIC/CSS/radar.css">
+  <link rel="stylesheet" href="/SRC/STATIC/CSS/loader.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="/SRC/STATIC/IMG/pes-de-bebe.png" />
+
+  <!-- Biblioteca Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="pagina-radar">
+
+  <!-- Animação de carregamento -->
+  <div id="carregando">
+    <div class="pes">
+      <img src="/SRC/STATIC/IMG/pes-de-bebe.png" alt="Ícone de pé">
+      <img src="/SRC/STATIC/IMG/pes-de-bebe.png" alt="Ícone de pé">
+      <img src="/SRC/STATIC/IMG/pes-de-bebe.png" alt="Ícone de pé">
+      <img src="/SRC/STATIC/IMG/pes-de-bebe.png" alt="Ícone de pé">
+      <img src="/SRC/STATIC/IMG/pes-de-bebe.png" alt="Ícone de pé">
+      <img src="/SRC/STATIC/IMG/pes-de-bebe.png" alt="Ícone de pé">
+    </div>
+  </div>
+
+  <!-- Navegação -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="/SRC/STATIC/IMG/logo.png" alt="Logotipo" class="nav-logo-img">
+        <span>Pequenos Passos</span>
+      </div>
+
+      <button class="nav-toggle" id="alternarMenu">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/SRC/TEMPLATE/dashboarder.html"><i class="fa-solid fa-house"></i> Início</a></li>
+        <li><a href="/SRC/TEMPLATE/radar.html" class="active"><i class="fa-solid fa-chart-bar"></i> Radar</a></li>
+        <li><a href="/SRC/TEMPLATE/atividades.html"><i class="fa-solid fa-bullseye"></i> Atividades</a></li>
+        <li><a href="/SRC/TEMPLATE/diario.html"><i class="fa-solid fa-book"></i> Diário</a></li>
+        <li><a href="/SRC/TEMPLATE/indicacao.html"><i class="fa-solid fa-bookmark"></i> Indicações</a></li>
+        <li><a href="/SRC/TEMPLATE/configuracao.html"><i class="fa-solid fa-gear"></i> Configurações</a></li>
+        <li><a href="/SRC/TEMPLATE/relatorio.html" class="btn-relatorio"><i class="fa-solid fa-file-lines"></i> Relatório</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- Seção principal do radar -->
+    <section class="card">
+      <h1 class="h1">Radar do Desenvolvimento</h1>
+      <p class="subtitle">
+        Este radar mostra o progresso da criança em diferentes áreas do desenvolvimento, com base nas atividades concluídas.
+      </p>
+
+      <div class="radar-flex">
+
+        <!-- Gráfico Radar -->
+        <div class="grafico-container">
+          <canvas id="radarChart"></canvas>
+        </div>
+
+        <!-- Legenda explicativa -->
+        <div class="legend">
+          <h3>Entendendo cada área</h3>
+          <ul>
+            <li><strong>Motor Fino:</strong> coordenação de mãos e dedos — recortar, desenhar, montar peças pequenas.</li>
+            <li><strong>Motor Grosso:</strong> movimentos amplos — correr, pular, equilíbrio e força.</li>
+            <li><strong>Linguagem:</strong> comunicação — fala, vocabulário, compreensão e escuta ativa.</li>
+            <li><strong>Cognitivo:</strong> pensamento lógico, memória e resolução de problemas.</li>
+            <li><strong>Socioemocional:</strong> empatia, convivência, autocontrole e expressão emocional.</li>
+          </ul>
+          <p class="note">Quanto mais preenchido o gráfico, maior o progresso da criança em cada domínio.</p>
+        </div>
+      </div>
+
+      <!-- Blocos de progresso -->
+      <div class="blocks-container" id="blocksContainer"></div>
+    </section>
+
+   <section class="desenvolvimento-section">
+  <h2>Desenvolvimento</h2>
+  <p>
+    Aqui serão exibidas informações detalhadas sobre o progresso, datas, alertas e recomendações de acompanhamento.
+  </p>
+
+  <button id="btnGerarIA" class="btn ghost">
+    Gerar análise com IA 🤖
+  </button>
+
+  <ul id="listaDesenvolvimento" class="lista-desenvolvimento">
+    <!-- preenchido pelo radar.js -->
+  </ul>
+</section>
+
+  </main>
+
+<footer>
+    <p class="copyright-small">© <span id="year"></span> Pequenos Passos. Todos os direitos reservados.</p>
+    Desenvolvido por Alunos PJP SENAC (Gabriel, Kathlen, Maria e Rafaela)
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script> 
+  <script src="/SRC/STATIC/JS/nav.js"></script>
+  <script src="/SRC/STATIC/JS/loader-pezinhos.js"></script>
+  <script type="module" src="/src/static/js/conectaApi.js"></script>
+  <script type="module" src="/src/static/js/radar.js"></script>
+ 
+ 
+</body>
+</html>
+
