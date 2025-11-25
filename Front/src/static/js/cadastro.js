@@ -149,4 +149,3 @@ function showError(msg) {
 function hideError() {
   errorBox.style.display = "none";
 }
- 
